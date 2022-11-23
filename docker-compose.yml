@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  app:
+    container_name: your-diet-auth
+    build: ./
+    depends_on:
+    ports:
+      - 8081:8081
+    volumes:
+      - ./:/home/app
+    networks:
+      - app_network
+  networks:
+    app_network:
+      driver: bridge  
